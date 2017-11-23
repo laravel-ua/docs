@@ -1,9 +1,9 @@
 # Artisan Console
 
-- [Introduction](#introduction)
-- [Writing Commands](#writing-commands)
-    - [Generating Commands](#generating-commands)
-    - [Command Structure](#command-structure)
+- [Вступ](#introduction)
+- [Написання команд](#writing-commands)
+    - [Генерація команд](#generating-commands)
+    - [Структура команд](#command-structure)
     - [Closure Commands](#closure-commands)
 - [Defining Input Expectations](#defining-input-expectations)
     - [Arguments](#arguments)
