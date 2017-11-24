@@ -1,39 +1,39 @@
-# Configuration
+# Конфігурація
 
-- [Introduction](#introduction)
-- [Environment Configuration](#environment-configuration)
-    - [Retrieving Environment Configuration](#retrieving-environment-configuration)
-    - [Determining The Current Environment](#determining-the-current-environment)
-- [Accessing Configuration Values](#accessing-configuration-values)
-- [Configuration Caching](#configuration-caching)
-- [Maintenance Mode](#maintenance-mode)
+- [Вступ](#introduction)
+- [Конфігурація середовища](#environment-configuration)
+    - [Отримання конфігурації середовища](#retrieving-environment-configuration)
+    - [Визначення поточного середовища](#determining-the-current-environment)
+- [Доступ до значень конфігурації](#accessing-configuration-values)
+- [Кешування конфігурації](#configuration-caching)
+- [Режим технічного обслуговування](#maintenance-mode)
 
 <a name="introduction"></a>
-## Introduction
+## Вступ
 
-All of the configuration files for the Laravel framework are stored in the `config` directory. Each option is documented, so feel free to look through the files and get familiar with the options available to you.
+Всі файли конфігурації Laravel зберігаються в каталозі `config`. Кожен параметр документально оформлений, тому не соромтеся переглядати файли та ознайомитися з доступними вам параметрами.
 
 <a name="environment-configuration"></a>
-## Environment Configuration
+## Конфігурація середовища
 
-It is often helpful to have different configuration values based on the environment where the application is running. For example, you may wish to use a different cache driver locally than you do on your production server.
+Іноді корисно мати різні значення конфігурації на основі середовища, де працює програма. Наприклад, ви можете використати інший драйвер кешу локально, ніж на продакшен-сервері.
 
-To make this a cinch, Laravel utilizes the [DotEnv](https://github.com/vlucas/phpdotenv) PHP library by Vance Lucas. In a fresh Laravel installation, the root directory of your application will contain a `.env.example` file. If you install Laravel via Composer, this file will automatically be renamed to `.env`. Otherwise, you should rename the file manually.
+Для цього Laravel використовує PHP бібліотеку [DotEnv](https://github.com/vlucas/phpdotenv) створену Vance Lucas. Після свіжої інсталяції Laravel, у вашому головному каталогу ви знайдете файл `.env.example`. Якщо ви встановили Laravel через Composer, цей файл буде автоматично переіменований в `.env`. В іншому випадку, вам необхідно перейменувати файл вручну.
 
-Your `.env` file should not be committed to your application's source control, since each developer / server using your application could require a different environment configuration. Furthermore, this would be a security risk in the event an intruder gain access to your source control repository, since any sensitive credentials would get exposed.
+Ваш файл `.env` повинен бути прихований від вашої програми контролю версій, оскільки кожен розробник / сервер може вимагати іншої конфігурації середовища. Крім того, це може бути небезпечно, у випадку якщо зловмисник отримає доступ до вашого сховища програми контролю версій, оскільки будь які конфіденційні дані будуть виявлені.
 
-If you are developing with a team, you may wish to continue including a `.env.example` file with your application. By putting place-holder values in the example configuration file, other developers on your team can clearly see which environment variables are needed to run your application. You may also create a `.env.testing` file. This file will override the `.env` file when running PHPUnit tests or executing Artisan commands with the `--env=testing` option.
+Якщо ви працюєте в команді, ви можете залишити файл `.env.example` у вашій програмі. Поширюючи плейсхолдери в цьому файлі, інші розробники у вашій команді можуть чітко бачити які змінні середовища необхідні для запуску вашої програми. Ви також можете створити файл `.env.testing`. Цей файл замінить файл `.env` коли будуть запущені тести PHPUnit або запущена Artisan-команда з параметром `--env=testing`.
 
-> {tip} Any variable in your `.env` file can be overridden by external environment variables such as server-level or system-level environment variables.
+> {tip} Будь-яка змінна у вашому файлі `.env` може бути перевизначена за допомогою змінних зовнішнього середовища, таких як змінні середовища на рівні сервера або системного рівня.
 
 <a name="retrieving-environment-configuration"></a>
-### Retrieving Environment Configuration
+### Отримання конфігурації середовища
 
-All of the variables listed in this file will be loaded into the `$_ENV` PHP super-global when your application receives a request. However, you may use the `env` helper to retrieve values from these variables in your configuration files. In fact, if you review the Laravel configuration files, you will notice several of the options already using this helper:
+Усі змінні, перелічені в цьому файлі, будуть завантажені в PHP супер-глобальну змінну `$_ENV`. Крім цього, ви можете використовувати хелпер `env` для отримання значень змінних у ваших конфігураційних файлах. Справді, якщо ви переглянете файли конфігурації Laravel, ви помітите декілька варіантів, які вже використовують цей хелпер.
 
     'debug' => env('APP_DEBUG', false),
 
-The second value passed to the `env` function is the "default value". This value will be used if no environment variable exists for the given key.
+Другий аргумент, переданий в функцію `env`, є "значення за замовчуванням". Це значення буде використано, якщо для даного ключа не існує змінної середовища.
 
 <a name="determining-the-current-environment"></a>
 ### Determining The Current Environment
