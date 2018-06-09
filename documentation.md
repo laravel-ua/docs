@@ -1,8 +1,8 @@
-- ## Prologue
-    - [Release Notes](/docs/{{version}}/releases)
-    - [Upgrade Guide](/docs/{{version}}/upgrade)
-    - [Contribution Guide](/docs/{{version}}/contributions)
-    - [API Documentation](/api/{{version}})
+- ## Пролог
+    - [Примітки релізу](/docs/{{version}}/releases)
+    - [Гайд по оновленню](/docs/{{version}}/upgrade)
+    - [Гайд по співпраці](/docs/{{version}}/contributions)
+    - [Документація API](/api/{{version}})
 - ## Для початку
     - [Інсталяція](/docs/{{version}}/installation)
     - [Конфігурація](/docs/{{version}}/configuration)
