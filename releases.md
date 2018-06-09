@@ -1,28 +1,28 @@
-# Release Notes
+# Примітки релізу
 
-- [Versioning Scheme](#versioning-scheme)
-- [Support Policy](#support-policy)
+- [Схема версіювання](#versioning-scheme)
+- [Політика підтримки](#support-policy)
 - [Laravel 5.5](#laravel-5.5)
 
 <a name="versioning-scheme"></a>
-## Versioning Scheme
+## Схема версіювання
 
-Laravel's versioning scheme maintains the following convention: `paradigm.major.minor`. Major framework releases are released every six months (February and August), while minor releases may be released as often as every week. Minor releases should **never** contain breaking changes.
+Схема версіювання Laravel підтримує таку конвенцію: `paradigm.major.minor`. Мажорні релізи випускаються кожні шість місяців (Лютий та Серпень), а мінорні релізи можуть випускатися навіть щотижня. Мінорні релізи **ніколи** не можуть містити критичних змін.
 
-When referencing the Laravel framework or its components from your application or package, you should always use a version constraint such as `5.5.*`, since major releases of Laravel do include breaking changes. However, we strive to always ensure you may update to a new major release in one day or less.
+При узалежненні від фреймворку Laravel або його компонентів вашою програмою або пакетом, ви завжди повинні використовувати обмеження версії, таке як `5.5.*`, оскільки мажорні версії Laravel будуть включати в себе критичні зміни. Тим не менш, ми прагнемо завжди гарантувати, що ви зможете оновитися до нового мажорного релізу за один день або менше.
 
-Paradigm shifting releases are separated by many years and represent fundamental shifts in the framework's architecture and conventions. Currently, there is no paradigm shifting release under development.
+Реліз парадигми розмежовується на багато років і репрезентує фундаментальні зміни в архітектурі фреймворку та конвенціях. В даний час реліз парадигми не розробляється.
 
-#### Why Doesn't Laravel Use Semantic Versioning?
+#### Чому Laravel не використовує семантичне версіювання?
 
-On one hand, all optional components of Laravel (Cashier, Dusk, Valet, Socialite, etc.) **do** use semantic versioning. However, the Laravel framework itself does not. The reason for this is because semantic versioning is a "reductionist" way of determining if two pieces of code are compatible. Even when using semantic versioning, you still must install the upgraded package and run your automated test suite to know if anything is *actually* incompatible with your code base.
+З одного боку, усі опціональні компоненти фреймворку Laravel (Cashier, Dusk, Valet, Socialite, тощо) **використовують** семантичне версіювання. Однак, фреймворк Laravel - ні. Причиною цього є те, що семантичні версії є "редукціоністським" способом визначити, чи сумісні дві частини коду. Навіть при використанні семантичних версій ви все одно повинні встановити оновлений пакет і запустити свої автоматичні тести, щоб дізнатись, чи він *продовжує* бути сумісним з вашою кодовою базою.
 
-So, instead, the Laravel framework uses a versioning scheme that is more communicative of the actual scope of the release. Furthermore, since minor releases **never** contain intentional breaking changes, you should never receive a breaking change as long as your version constraints follow the `paradigm.major.*` convention.
+Таким чином, замість цього, фреймворк Laravel використовує схему версіювання, яка більш комунікативно відповідає дійсному релізу. Крім того, оскільки мінорні релізи **ніколи** не містять навмисних критичних змін, ви ніколи не повинні отримати їх, якщо обмежуєте версію згідно конвенції `paradigm.major.*`.
 
 <a name="support-policy"></a>
-## Support Policy
+## Політика підтримки
 
-For LTS releases, such as Laravel 5.5, bug fixes are provided for 2 years and security fixes are provided for 3 years. These releases provide the longest window of support and maintenance. For general releases, bug fixes are provided for 6 months and security fixes are provided for 1 year.
+Для випусків LTS, таких як Laravel 5.5, виправлення помилок передбачено на 2 роки, а виправлення безпеки - на 3 роки. Ці випуски надають найдовше вікно підтримки та обслуговування. Для загальних випусків, виправлення помилок надаються на 6 місяців, а виправлення безпеки - на 1 рік.
 
 <a name="laravel-5.5"></a>
 ## Laravel 5.5 (LTS)
